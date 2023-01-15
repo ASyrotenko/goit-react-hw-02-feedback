@@ -1,4 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { StatisticsList, StatisticsItem } from './statistics.styled';
+import { number } from 'prop-types';
 
 export const Statistics = ({ options, values, total, positivePercentage }) => {
   return (
@@ -14,4 +17,11 @@ export const Statistics = ({ options, values, total, positivePercentage }) => {
       </li>
     </StatisticsList>
   );
+};
+
+Statistics.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
+  values: PropTypes.arrayOf(PropTypes.number),
+  total: PropTypes.number,
+  positivePercentage: number,
 };
